@@ -1,4 +1,4 @@
-from turtle import Screen , Turtle
+from turtle import Turtle
 
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVEDISTANCE = 20
@@ -7,10 +7,6 @@ class Snake():
     
     def __init__(self) -> None:
         self.segments = []
-        self.screen = Screen()
-        self.screen.tracer(0)
-        self.screen.title("Snake Game")
-        self.screen.bgcolor("black")
         self.createSegments()
 
 
