@@ -43,6 +43,14 @@ while is_game_on:
         is_game_on = False
         score_board.game_over()
 
+# Detect collision between snake body
+
+    for segment in snake.segments:
+        if snake.head == segment:
+            pass
+        elif snake.head.distance(segment) < 15:
+            is_game_on = False
+            score_board.game_over()
 
 
 screen.exitonclick()
