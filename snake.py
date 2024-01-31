@@ -7,6 +7,7 @@ class Snake():
     
     def __init__(self) -> None:
         self.segments = []
+        self.current_dir = 'right'
         self.createSegments()
 
 
@@ -26,3 +27,7 @@ class Snake():
             y_new = self.segments[i - 1].ycor()
             self.segments[i].goto(x_new, y_new)
         self.head.forward(MOVEDISTANCE)
+
+    def turn_up(self):
+        if self.current_dir == 'right' or self.current_dir == 'left':
+            self.head.setheading(90)
