@@ -4,9 +4,11 @@ from turtle import Turtle, Screen
 import time
 
 screen = Screen()
+screen.setup(600, 600)
 screen.tracer(0)
 screen.title("Snake Game")
 screen.bgcolor("black")
+
 
 snake = Snake()
 is_game_on = True
