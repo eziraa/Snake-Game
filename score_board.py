@@ -1,5 +1,9 @@
 from turtle import Turtle
 
+# declare constant variable
+
+ALIGNMENT = 'center'
+FONT = ("Arial", 15, "normal")
 
 class ScoreBoard(Turtle):
     """
@@ -22,5 +26,5 @@ class ScoreBoard(Turtle):
     def update_score(self):
         """
         This mathod is to update score"""
-        self.write(f"Score: {self.score}", align="center",
-                   font=("Arial", 15, "normal"))
+        self.write(f"Score: {self.score}", align=ALIGNMENT,
+                   font=FONT)
