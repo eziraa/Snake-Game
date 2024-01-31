@@ -28,8 +28,6 @@ while is_game_on:
     screen.update()
     time.sleep(0.14)
     if snake.head.distance(food) <= 10:
-        random_x = random.randint(-280, 280)
-        random_y = random.randint(-280, 280)
-        food.goto(random_x, random_y)
+        food.refresh()
 
 snake.screen.exitonclick()
