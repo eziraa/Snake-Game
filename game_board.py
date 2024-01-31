@@ -16,6 +16,7 @@ screen.listen()
 snake = Snake()
 is_game_on = True
 screen.onkey(fun=snake.turn_up, key='Up')
+screen.onkey(fun=snake.turn_right, key='Right')
 while is_game_on:
     snake.moveSnake()
     screen.update()
