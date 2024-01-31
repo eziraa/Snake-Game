@@ -1,9 +1,10 @@
 # Impoerting necessary module
-import random
 from snake import Snake
 from food import Food
+from score_board import ScoreBoard
 from turtle import Turtle, Screen
 import time
+
 
 screen = Screen()
 screen.setup(600, 600)
@@ -17,6 +18,8 @@ screen.listen()
 
 snake = Snake()
 
+score_b = ScoreBoard()
+
 food = Food()
 is_game_on = True
 screen.onkey(fun=snake.turn_up, key='Up')
@@ -29,5 +32,6 @@ while is_game_on:
     time.sleep(0.14)
     if snake.head.distance(food) <= 10:
         food.refresh()
+
 
 snake.screen.exitonclick()
