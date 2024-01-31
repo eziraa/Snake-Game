@@ -28,3 +28,9 @@ class ScoreBoard(Turtle):
         This mathod is to update score"""
         self.write(f"Score: {self.score}", align=ALIGNMENT,
                    font=FONT)
+
+    def game_over(self):
+        """
+        This method is display game over message"""
+        self.goto(0, 0)
+        self.write("GAME OVER!!!", align=ALIGNMENT, font=FONT)
