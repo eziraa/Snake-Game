@@ -14,12 +14,17 @@ class Snake():
     def  createSegments(self):
 
         for position in STARTING_POSITIONS:
-            new_segment = Turtle("square")
-            new_segment.color("green")
-            new_segment.penup()
-            new_segment.goto(position)
-            self.segments.append(new_segment)
+            self.add_segment(position)
         self.head = self.segments[0]
+
+    def add_segment(self, position):
+        """
+        this method is to add new segment"""
+        new_segment = Turtle("square")
+        new_segment.color("green")
+        new_segment.penup()
+        new_segment.goto(position)
+        self.segments.append(new_segment)
 
     def moveSnake(self):
         for i in range(len(self.segments) - 1, 0, -1):
@@ -51,7 +56,4 @@ class Snake():
     def extend(self):
         """"
         This method is to extend the body of the snake when it get food"""
-        new_segment = Turtle("square")
-        new_segment.color("green")
-        new_segment.penup()
-        self.segments.append(new_segment)
+        self.add_segment(self.segments[-1].position())
