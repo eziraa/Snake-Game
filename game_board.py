@@ -1,4 +1,5 @@
 # Impoerting necessary module
+import random
 from snake import Snake
 from food import Food
 from turtle import Turtle, Screen
@@ -26,5 +27,9 @@ while is_game_on:
     snake.moveSnake()
     screen.update()
     time.sleep(0.14)
+    if snake.head.distance(food) <= 10:
+        random_x = random.randint(-280, 280)
+        random_y = random.randint(-280, 280)
+        food.goto(random_x, random_y)
 
 snake.screen.exitonclick()
