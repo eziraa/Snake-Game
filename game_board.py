@@ -33,6 +33,7 @@ while is_game_on:
 
     # Detect food eating
     if snake.head.distance(food) <= 15:
+        snake.extend()
         food.refresh()
         score_board.increase_score()
 
@@ -43,4 +44,5 @@ while is_game_on:
         score_board.game_over()
 
 
-snake.screen.exitonclick()
+
+screen.exitonclick()

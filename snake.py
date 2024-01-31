@@ -47,3 +47,11 @@ class Snake():
         if self.current_dir == 'up' or self.current_dir == 'down':
             self.head.setheading(180)
             self.current_dir = 'left'
+
+    def extend(self):
+        """"
+        This method is to extend the body of the snake when it get food"""
+        new_segment = Turtle("square")
+        new_segment.color("green")
+        new_segment.penup()
+        self.segments.append(new_segment)
