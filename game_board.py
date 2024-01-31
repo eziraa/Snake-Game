@@ -1,5 +1,6 @@
 # Impoerting necessary module
 from snake import Snake
+from food import Food
 from turtle import Turtle, Screen
 import time
 
@@ -14,6 +15,8 @@ screen.bgcolor("black")
 screen.listen()
 
 snake = Snake()
+
+food = Food()
 is_game_on = True
 screen.onkey(fun=snake.turn_up, key='Up')
 screen.onkey(fun=snake.turn_right, key='Right')
@@ -22,6 +25,6 @@ screen.onkey(fun=snake.turn_left, key='Left')
 while is_game_on:
     snake.moveSnake()
     screen.update()
-    time.sleep(0.4)
+    time.sleep(0.14)
 
 snake.screen.exitonclick()
