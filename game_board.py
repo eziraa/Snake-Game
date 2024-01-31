@@ -18,7 +18,7 @@ screen.listen()
 
 snake = Snake()
 
-score_b = ScoreBoard()
+score_board = ScoreBoard()
 
 food = Food()
 is_game_on = True
@@ -30,9 +30,17 @@ while is_game_on:
     snake.moveSnake()
     screen.update()
     time.sleep(0.14)
-    if snake.head.distance(food) <= 10:
+
+    # Detect food eating
+    if snake.head.distance(food) <= 15:
         food.refresh()
-        score_b.increase_score()
+        score_board.increase_score()
+
+    # Detect snake reach to the wall
+
+    if snake.head.xcor() < -280 or snake.head.xcor() > 280 or snake.head.ycor() < -280 or snake.head.ycor() > 280:
+        is_game_on = False
+        score_board.game_over()
 
 
 snake.screen.exitonclick()
