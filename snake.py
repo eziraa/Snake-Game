@@ -37,3 +37,13 @@ class Snake():
         if self.current_dir == 'up' or self.current_dir == 'down':
             self.head.setheading(0)
             self.current_dir = 'right'
+
+    def turn_down(self):
+        if self.current_dir == 'left' or self.current_dir == 'right':
+            self.head.setheading(270)
+            self.current_dir = 'down'
+
+    def turn_left(self):
+        if self.current_dir == 'up' or self.current_dir == 'down':
+            self.head.setheading(180)
+            self.current_dir = 'left'
