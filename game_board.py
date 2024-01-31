@@ -32,6 +32,7 @@ while is_game_on:
     time.sleep(0.14)
     if snake.head.distance(food) <= 10:
         food.refresh()
+        score_b.update_score()
 
 
 snake.screen.exitonclick()
